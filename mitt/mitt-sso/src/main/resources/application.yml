@@ -1,0 +1,21 @@
+server:
+  port: 6666
+spring:
+  application:
+    name: sso
+  datasource:
+    url: jdbc:mysql://mysql.6api.top:3306/mitt
+    username: mitt
+    password: mitt-123456
+    driver-class-name: com.mysql.jdbc.Driver
+    hikari:
+      maximum-pool-size: 20
+      minimum-idle: 20
+eureka:
+  client:
+    service-url: # EurekaServer地址
+      defaultZone: http://127.0.0.1:10086/eureka
+  instance:
+    instance-id: ${spring.application.name}:${server.port}
+    prefer-ip-address: true # 当调用getHostname获取实例的hostname时，返回ip而不是host名称
+    ip-address: 127.0.0.1 # 指定自己的ip信息，不指定的话会自己寻找

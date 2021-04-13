@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.mitt</groupId>
+    <artifactId>mitt</artifactId>
+    <version>1.0</version>
+    <name>mitt</name>
+    <description>mitt父工程</description>
+    <packaging>pom</packaging>
+    <modules>
+        <module>mitt-common</module>
+        <module>mitt-eureka</module>
+        <module>mitt-consumer</module>
+        <module>mitt-gateway</module>
+        <module>mitt-sso</module>
+        <module>mitt-user</module>
+
+    </modules>
+
+
+</project>
