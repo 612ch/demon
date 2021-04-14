@@ -1,4 +1,4 @@
-package com.mitt.common.util;
+package com.mitt.common.utils;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;

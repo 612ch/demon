@@ -1,6 +1,6 @@
 package com.mitt.consumer.controller;
 
-import com.mitt.common.util.Result;
+import com.mitt.common.utils.Result;
 import com.mitt.consumer.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

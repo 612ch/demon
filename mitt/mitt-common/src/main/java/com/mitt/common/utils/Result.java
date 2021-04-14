@@ -1,4 +1,4 @@
-package com.mitt.common.util;
+package com.mitt.common.utils;
 
 import java.util.HashMap;
 import java.util.Map;

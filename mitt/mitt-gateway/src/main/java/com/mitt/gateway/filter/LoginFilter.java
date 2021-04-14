@@ -1,6 +1,6 @@
 package com.mitt.gateway.filter;
 
-import com.mitt.common.util.JwtUtil;
+import com.mitt.common.utils.JwtUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;

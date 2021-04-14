@@ -15,6 +15,7 @@
         <module>mitt-eureka</module>
         <module>mitt-consumer</module>
         <module>mitt-gateway</module>
+        <module>mitt-pay</module>
         <module>mitt-sso</module>
         <module>mitt-user</module>
 
