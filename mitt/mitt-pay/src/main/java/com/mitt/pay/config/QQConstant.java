@@ -14,7 +14,7 @@ public class QQConstant {
     /**
      * APIKEY
      */
-    public static final String APP_KEY = "123456";
+    public static final String APP_KEY = "a1b0870b97e57215473d9baf557c6998";
 
     /**
      * 支付域名 下单
