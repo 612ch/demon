@@ -7,4 +7,8 @@ package com.mitt.pay.config;
  * @date 2021/3/16 17:25
  **/
 public class AliConstant {
+    public static String APP_ID = "2088422397180963";
+    public static String APP_KEY = "123456";
+    public static String API_URL = "https://openapi.alipay.com/gateway.do";
+    public static String SIGN_TYPE = "RSA2";
 }

@@ -1,5 +1,7 @@
 package com.mitt.pay.pojo;
 
+import com.mitt.pay.config.PayConstant;
+import com.mitt.pay.utils.IPUtil;
 import com.mitt.pay.utils.OrderNoUtil;
 import lombok.Data;
 
@@ -12,11 +14,22 @@ import lombok.Data;
 @Data
 public class PayOrderDO {
 
-
     /**
      * 商户订单号
      */
     private String outTradeNo;
+    /**
+     * 微信订单
+     */
+    private String prepayId;
+    /**
+     * 商户订单号
+     */
+    private String outOrderNo;
+    /**
+     * 订单号
+     */
+    private String orderNo;
     /**
      * 通知地址
      */
@@ -49,17 +62,46 @@ public class PayOrderDO {
      * 支付类型 JSAPI, NATIVE, APP, MWEB
      */
     private String payType;
+    /**
+     * 随机字符串
+     */
+    private String nonceStr;
+    /**
+     * 请求地址
+     */
+    private String reqIP;
+    /**
+     * 附加数据
+     */
+    private String attach;
 
+    public String getReqIP() {
+        if (null == reqIP) {
+            return IPUtil.getIpAddr();
+        }
+        return payType;
+    }
 
     public String getPayType() {
         if (null == payType) {
-            payType = "NATIVE";
+            return PayConstant.PayEnum.NATIVE.toString();
         }
         return payType.toUpperCase();
     }
+
     public String getOutTradeNo() {
         if (null == outTradeNo) {
-            outTradeNo = OrderNoUtil.getInstance().WXPayNO();
+            outTradeNo = OrderNoUtil.getInstance().wxPayNO();
+        }
+        return outTradeNo;
+    }
+    public String getOutTradeNo(PayConstant.PayType type) {
+        if(type== PayConstant.PayType.QQ){
+            outTradeNo = OrderNoUtil.getInstance().qqPayNO();
+        } else if (type== PayConstant.PayType.ZFB) {
+            outTradeNo = OrderNoUtil.getInstance().aliPayNO();
+        } else{
+            outTradeNo = OrderNoUtil.getInstance().wxPayNO();
         }
         return outTradeNo;
     }
@@ -69,6 +111,12 @@ public class PayOrderDO {
             shopName = "在线支付";
         }
         return shopName;
+    }
+    public String getNonceStr() {
+        if (null == nonceStr) {
+            nonceStr = OrderNoUtil.getInstance().nonceStr();
+        }
+        return nonceStr;
     }
 
 }

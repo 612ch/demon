@@ -36,7 +36,7 @@ public class OrderNoUtil {
     /**
      * 获得实例 单例模式
      *
-     * @return {@link OrderNoUtil}
+     * @return OrderNoUtil
      */
     public static OrderNoUtil getInstance() {
         if (instance == null) {
@@ -52,9 +52,9 @@ public class OrderNoUtil {
     /**
      * 微信生成订单号
      *
-     * @return {@link String}
+     * 微信订单号
      */
-    public String WXPayNO() {
+    public String wxPayNO() {
         String str = null;
         try {
             String uuid = UUID.randomUUID().toString();
@@ -67,9 +67,9 @@ public class OrderNoUtil {
     /**
      * QQ钱包生成订单号
      *
-     * @return {@link String}
+     * QQ钱包订单号
      */
-    public String QQPayNO() {
+    public String qqPayNO() {
         String str = null;
         try {
             String uuid = UUID.randomUUID().toString();
@@ -82,9 +82,9 @@ public class OrderNoUtil {
     /**
      * 支付宝生成订单号
      *
-     * @return {@link String}
+     * @return 支付宝订单号
      */
-    public String AlipayNO() {
+    public String aliPayNO() {
         String str = null;
         try {
             String uuid = UUID.randomUUID().toString();
@@ -93,6 +93,14 @@ public class OrderNoUtil {
             return null;
         }
         return str;
+    }
+    /**
+     * 生成随机字符串
+     *
+     * @return 随机字符串
+     */
+    public String nonceStr() {
+        return UUID.randomUUID().toString().replace("-", "").toLowerCase();
     }
 
 }

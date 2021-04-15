@@ -20,14 +20,28 @@ public class PayController {
     @Autowired
     PayService payService;
 
-    @RequestMapping("web")
-    public Result createOrderNative(PayOrderDO payOrderDO){
+    @RequestMapping("wx")
+    public Result createOrderNativeByWx(PayOrderDO payOrderDO){
         if(!CheckUtil.notEmpty(payOrderDO.getMoney())){
            return Result.fail(400, "金额不能为空");
         }
-        return payService.createOrder(payOrderDO);
+        return payService.createOrderByWX(payOrderDO);
     }
 
+    @RequestMapping("qq")
+    public Result createOrderNativeByQq(PayOrderDO payOrderDO){
+        if(!CheckUtil.notEmpty(payOrderDO.getMoney())){
+           return Result.fail(400, "金额不能为空");
+        }
+        return payService.createOrderByQQ(payOrderDO);
+    }
 
+    @RequestMapping("ali")
+    public Result createOrderNativeByAli(PayOrderDO payOrderDO){
+        if(!CheckUtil.notEmpty(payOrderDO.getMoney())){
+           return Result.fail(400, "金额不能为空");
+        }
+        return payService.createOrderByAli(payOrderDO);
+    }
 
 }

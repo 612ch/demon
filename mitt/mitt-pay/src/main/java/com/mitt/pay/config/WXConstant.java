@@ -10,7 +10,7 @@ public class WXConstant {
     /**
      * APPID
      */
-    public static final String APP_ID = "wxb72dff6c1a123456";
+    public static final String APP_ID = "wxb72dff6c1ad98d55";
     /**
      * MCHID
      */
@@ -18,14 +18,6 @@ public class WXConstant {
     /**
      * API key
      */
-    public static final String API_KEY = "132456";
-    /**
-     * 回调地址
-     */
-    public static final String NOTIFY_URL = "https://www.612ch.com/";
-
-    public enum WXEnum{
-        WEB,CNY
-    }
+    public static final String API_KEY = "gbiloyidfzatq9zi7oyomskjx55ypjvq";
 
 }
