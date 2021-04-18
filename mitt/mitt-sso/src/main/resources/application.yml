@@ -1,5 +1,5 @@
 server:
-  port: 6666
+  port: 9001
 spring:
   application:
     name: sso
@@ -13,9 +13,15 @@ spring:
       minimum-idle: 20
 eureka:
   client:
-    service-url: # EurekaServerµØÖ·
+    service-url: # EurekaServeråœ°å€
       defaultZone: http://127.0.0.1:10086/eureka
+#      defaultZone: http://82.156.236.216:10086/eureka
   instance:
     instance-id: ${spring.application.name}:${server.port}
-    prefer-ip-address: true # µ±µ÷ÓÃgetHostname»ñÈ¡ÊµÀıµÄhostnameÊ±£¬·µ»Øip¶ø²»ÊÇhostÃû³Æ
-    ip-address: 127.0.0.1 # Ö¸¶¨×Ô¼ºµÄipĞÅÏ¢£¬²»Ö¸¶¨µÄ»°»á×Ô¼ºÑ°ÕÒ
+    prefer-ip-address: true # å½“è°ƒç”¨getHostnameè·å–å®ä¾‹çš„hostnameæ—¶ï¼Œè¿”å›ipè€Œä¸æ˜¯hoståç§°
+    ip-address: 127.0.0.1 # æŒ‡å®šè‡ªå·±çš„ipä¿¡æ¯ï¼Œä¸æŒ‡å®šçš„è¯ä¼šè‡ªå·±å¯»æ‰¾
+#    ip-address: 82.156.236.216 # æŒ‡å®šè‡ªå·±çš„ipä¿¡æ¯ï¼Œä¸æŒ‡å®šçš„è¯ä¼šè‡ªå·±å¯»æ‰¾
+logging:
+  level:
+    org: debug
+    com: debug

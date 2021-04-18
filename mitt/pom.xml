@@ -3,13 +3,9 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>com.mitt</groupId>
     <artifactId>mitt</artifactId>
-    <version>1.0</version>
-    <name>mitt</name>
-    <description>mitt父工程</description>
-    <packaging>pom</packaging>
+    <version>1.0.0</version>
     <modules>
         <module>mitt-common</module>
         <module>mitt-eureka</module>
@@ -18,8 +14,90 @@
         <module>mitt-pay</module>
         <module>mitt-sso</module>
         <module>mitt-user</module>
-
     </modules>
-
-
+    <name>mitt</name>
+    <description>mitt父工程:方便统一管理依赖版本</description>
+    <packaging>pom</packaging>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.4.4</version>
+        <relativePath/> <!-- lookup parent from repository 从依赖库查找依赖，如果去掉relativePath则是本地-->
+    </parent>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <spring-cloud.version>2020.0.2</spring-cloud.version>
+        <mybatis.starter.version>2.1.4</mybatis.starter.version>
+        <tk.mybatis.version>2.1.5</tk.mybatis.version>
+        <fastjson.version>1.2.75</fastjson.version>
+        <mitt.common.latest.version>0.0.1</mitt.common.latest.version>
+        <httpclient.version>4.3.4</httpclient.version>
+        <httpcore.version>4.3.2</httpcore.version>
+        <httpmime.version>4.3.4</httpmime.version>
+        <jjwt.version>0.9.0</jjwt.version>
+        <jwt.version>3.2.0</jwt.version>
+    </properties>
+    <dependencyManagement>
+        <dependencies>
+            <!-- springCloud -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- mybatis启动器 -->
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis.starter.version}</version>
+            </dependency>
+            <!-- 通用Mapper启动器 -->
+            <dependency>
+                <groupId>tk.mybatis</groupId>
+                <artifactId>mapper-spring-boot-starter</artifactId>
+                <version>${tk.mybatis.version}</version>
+            </dependency>
+            <!--fastjson-->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.mitt</groupId>
+                <artifactId>common</artifactId>
+                <version>${mitt.common.latest.version}</version>
+            </dependency>
+            <!--httpclient-->
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpclient</artifactId>
+                <version>${httpclient.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpcore</artifactId>
+                <version>${httpcore.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpmime</artifactId>
+                <version>${httpmime.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    <repositories>
+        <repository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>https://repo.spring.io/milestone</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 </project>

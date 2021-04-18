@@ -8,6 +8,8 @@ eureka:
     register-with-eureka: false
     fetch-registry: false
     service-url:
-      defaultZone: http://127.0.0.1:${server.port}/
+      defaultZone: http://127.0.0.1:${server.port}/ # local
+#      defaultZone: http://82.156.236.216:${server.port}/ # online
   instance:
-    ip-address: 127.0.0.1
+    ip-address: 127.0.0.1 # local
+#    ip-address: 82.156.236.216 # online
